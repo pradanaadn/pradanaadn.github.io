@@ -4,7 +4,8 @@ title: Developed a Retrieval-Augmented Generation (RAG) Chatbot to Improve Acces
   to Banking Product Information
 date: '2024-12-07 21:55:03 +0800'
 categories: [RAG, Chatbot, Langchain]
-tags: [rag, bank, streamlit, chromadb, langchain, gemini, portofolio]
+tags: [python, rag, bank, streamlit, chromadb, langchain, gemini, portofolio]
+
 image:
   path: assets/img/post_image/chatbot-4071274_640.webp
 ---

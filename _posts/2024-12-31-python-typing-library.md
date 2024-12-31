@@ -2,6 +2,10 @@
 layout: post
 title: Python Typing Library
 date: '2024-12-31 20:16:18 +0800'
+categories: [Python, Python Library, Note]
+tags: [python, typing, note, tips]
+image:
+  path: assets/img/post_image/python.webp
 ---
 The Python `typing` library provides support for type hints, enabling developers to specify the expected types of variables, function arguments, and return values. This improves code clarity, maintainability, and helps with static analysis tools like `mypy`.
 
