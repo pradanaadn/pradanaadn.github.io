@@ -7,7 +7,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://pradanaadn.github.io',
-  base: '/portofolio',
+  base: '/',
   integrations: [tailwind(), react()],
   vite: {
     optimizeDeps: {
