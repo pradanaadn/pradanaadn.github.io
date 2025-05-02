@@ -9,6 +9,11 @@ export default defineConfig({
   site: 'https://pradanaadn.github.io',
   base: '/',
   integrations: [tailwind(), react()],
+  redirects: {
+    '/portofolio': '/',
+    '/about': '/',
+    '/aboutme': '/',
+  },
   vite: {
     optimizeDeps: {
       include: ["zwitch"],
