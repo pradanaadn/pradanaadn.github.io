@@ -2,9 +2,33 @@
 import {getPath} from "../utils.tsx";
 interface Props {
   title: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  keywords?: string[];
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "AI/ML Engineer building practical machine learning products, computer vision systems, and MLOps solutions that help teams ship faster.",
+  canonical = "https://pradanaadn.github.io/",
+  image = getPath("/svg/logo.svg"),
+  keywords = [
+    "Pradana Adnyana",
+    "Machine Learning Engineer",
+    "AI Engineer",
+    "MLOps Engineer",
+    "Computer Vision",
+    "Natural Language Processing",
+    "Deep Learning",
+    "Python Developer",
+    "TensorFlow",
+    "PyTorch",
+    "AI Product Development",
+    "Model Deployment",
+    "Portfolio",
+  ],
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -12,15 +36,67 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="google-site-verification" content="I9xlSg2YNj-bBORDdhCIUGs3sgKcbeyNiNy7GCK0J9I" />
-    <meta name="description" content="AI/ML Engineer" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(", ")} />
+    <meta name="author" content="Pradana Adnyana" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="theme-color" content="#101010" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg" href={getPath("/svg/logo.svg" )}/>
-    <meta property="og:title" content="Pradana Adnyana" />
-    <meta property="og:description" content="AI/ML Engineer" />
-    <meta property="og:image" content={getPath("/svg/logo.svg")} />
-    <meta property="og:url" content="https://pradanaadn.github.io"/>
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={getPath("/svg/logo.svg")} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content="Pradana Adnyana portfolio logo" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Pradana's Personal Web" />
+    <meta property="og:site_name" content="Pradana Adnyana Portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Pradana Adnyana",
+      jobTitle: "Machine Learning Engineer",
+      url: canonical,
+      image,
+      sameAs: [
+        "https://github.com/pradanaadn",
+        "https://linkedin.com/in/pradanaadn",
+      ],
+      alumniOf: "Udayana University",
+      knowsAbout: [
+        "Machine Learning",
+        "AI Product Development",
+        "Computer Vision",
+        "Natural Language Processing",
+        "MLOps",
+        "Deep Learning",
+        "Model Deployment",
+        "AI Automation",
+        "Predictive Analytics",
+        "Generative AI",
+        "LLM Applications",
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+      ],
+      description,
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Pradana Adnyana Portfolio",
+      url: canonical,
+      description,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${canonical}?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    })} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,7 +132,7 @@ const { title } = Astro.props;
     --white: #dfdfdf;
     --white-icon: #f3f3f398;
     --white-icon-tr: #f3f3f310;
-  }a476ff
+  }
 
   * {
     font-family:
