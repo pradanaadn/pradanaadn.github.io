@@ -17,9 +17,9 @@ export interface Project {
 
 const ProjectCard: FC<{ project: Project }> = ({ project }) => {
     return (
-        <div className="group bg-[#1414149c] rounded-2xl p-4 border border-[#ffffff10] hover:border-[#ffffff30] transition-all duration-300">
-            <div className="block">
-                <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+        <div className="group flex h-full min-h-[38rem] flex-col rounded-2xl border border-[#ffffff10] bg-[#1414149c] p-4 transition-all duration-300 hover:border-[#ffffff30]">
+            <div className="flex h-full flex-1 flex-col gap-4">
+                <div className="overflow-hidden rounded-xl shadow-lg transition-shadow duration-300 hover:shadow-xl">
                     <img
                         src={project.image.src}
                         alt={project.title}
@@ -28,8 +28,8 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
                         className="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                 </div>
-                <div className="space-y-4">
-                    <div>
+                <div className="flex flex-1 flex-col gap-4">
+                    <div className="space-y-2">
                         <h4 className="text-2xl font-semibold mb-2">{project.title}</h4>
                         <p className="text-[var(--white-icon)] text-sm line-clamp-2">
                             {project.description}
@@ -47,7 +47,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
                         ))}
                     </div>
 
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                         {project.achievements.map((achievement, index) => (
                             <div key={index} className="flex items-center gap-2 text-sm text-[var(--white-icon)]">
                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -58,7 +58,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
                         ))}
                     </div>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-[#ffffff10]">
+                    <div className="mt-auto flex items-center justify-between border-t border-[#ffffff10] pt-4">
                         <span className="text-sm px-2 py-1 bg-[#ffffff10] rounded-full text-[var(--white-icon)]">
                             {project.status}
                         </span>
@@ -101,7 +101,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
 
 const ProjectList: FC<{ projects: Project[] }> = ({ projects }) => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-stretch auto-rows-fr">
             {projects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
             ))}

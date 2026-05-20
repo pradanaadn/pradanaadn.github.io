@@ -37,37 +37,40 @@ const education = [
             type="button"
             href={getPath("/pdf/latest_resume.pdf")}
             target="_blank"
-            class="text-yellow-950 bg-yellow-500 hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-extrabold rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 me-2 mb-2"
+            class="inline-flex items-center gap-2 rounded-full border border-[var(--sec)]/35 bg-[var(--background)]/40 px-5 py-2.5 text-sm font-semibold text-[var(--sec)] transition hover:bg-[var(--sec)] hover:text-[var(--background)] focus:outline-none focus:ring-4 focus:ring-[var(--sec)]/30"
           >
             <!-- License: MIT. Made by michaelampr: https://github.com/michaelampr/jam -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-4 h-4 me-2 -ms-1"
+              class="h-4 w-4 shrink-0 fill-current"
               aria-hidden="true"
               focusable="false"
               role="img"
-              ><path
-                d="M3 0h10a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3zm1 7a1 1 0 1 0 0 2h8a1 1 0 0 0 0-2H4zm0 8a1 1 0 0 0 0 2h5a1 1 0 0 0 0-2H4zM4 3a1 1 0 1 0 0 2h8a1 1 0 0 0 0-2H4zm0 8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2H4z"
-              ></path></svg
             >
+              <path
+                d="M3 0h10a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3zm1 7a1 1 0 1 0 0 2h8a1 1 0 0 0 0-2H4zm0 8a1 1 0 0 0 0 2h5a1 1 0 0 0 0-2H4zM4 3a1 1 0 1 0 0 2h8a1 1 0 0 0 0-2H4zm0 8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2H4z"
+              ></path>
+            </svg>
             Resume
           </a>
         </div>
 
-        <div class="space-y-4">
-          <h4 class="text-xl font-medium">Education</h4>
-          <div class="space-y-4">
+        <div class="space-y-4 pt-2">
+          <h4 class="text-xl font-medium text-[var(--white)]">Education</h4>
+          <div class="divide-y divide-[var(--white-icon-tr)] border-t border-[var(--white-icon-tr)]">
             {
               education.map((edu) => (
-                <div class="bg-[#1414149c] rounded-xl p-4 border border-[#ffffff10]">
-                  <h5 class="font-medium mb-1">{edu.school}</h5>
-                  <p class="text-[var(--white-icon)] text-sm">{edu.degree}</p>
-                  <div class="flex justify-between items-center mt-2 text-sm text-[var(--white-icon)]">
-                    <span>{edu.period}</span>
+                <div class="grid gap-3 py-4 sm:grid-cols-[1fr_auto] sm:items-start">
+                  <div>
+                    <h5 class="font-semibold text-[var(--white)]">{edu.school}</h5>
+                    <p class="mt-1 text-sm leading-relaxed text-[var(--white-icon)]">
+                      {edu.degree}
+                    </p>
+                  </div>
 
-                    <span class="rounded-md bg-yellow-500 px-2 py-1 text-xs font-extrabold text-yellow-950 ring-1 ring-yellow-600/20 ring-inset">
-                      GPA: {edu.gpa}
-                    </span>
+                  <div class="flex flex-col items-start gap-2 sm:items-end">
+                    <span class="text-sm text-[var(--white-icon)]">{edu.period}</span>
+                 
                   </div>
                 </div>
               ))

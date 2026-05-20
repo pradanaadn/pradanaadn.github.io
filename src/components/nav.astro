@@ -64,6 +64,17 @@ const navItems: NavItem[] = [
 
 
 <script>
+  const setActiveLink = (href: string) => {
+    document
+      .querySelectorAll("nav a[href^='#']")
+      .forEach((link) => link.classList.remove("active"));
+
+    const activeLink = document.querySelector(`nav a[href="${href}"]`);
+    if (activeLink) {
+      activeLink.classList.add("active");
+    }
+  };
+
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -75,22 +86,28 @@ const navItems: NavItem[] = [
           behavior: "smooth",
         });
       }
+
+      setActiveLink(`#${targetId}`);
     });
   });
 
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll("nav a[href^='#']");
-    const observerOptions = { threshold: 0.5 };
+    const observerOptions = {
+      threshold: 0,
+      rootMargin: "-35% 0px -55% 0px",
+    };
 
-    const observerCallback = (entries) => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          navLinks.forEach((link) => link.classList.remove("active"));
           const id = entry.target.getAttribute("id");
-          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
-          if (activeLink) {
-            activeLink.classList.add("active");
+          if (!id) {
+            return;
+          }
+
+          if (id === "home" || id === "aboutme" || id === "work" || id === "projects") {
+            setActiveLink(`#${id}`);
           }
         }
       });

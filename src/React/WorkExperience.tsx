@@ -1,6 +1,6 @@
 const CalendarIcon = () => (
     <svg
-        className="w-2.5 h-2.5 text-white dark:text-white"
+        className="w-2.5 h-2.5 text-[var(--background)]"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
@@ -24,29 +24,29 @@ const TimelineItem = ({
     isCurrent?: boolean;
 }) => (
     <li className="mb-10 ms-6">
-        <span className="absolute flex items-center justify-center w-6 h-6 bg-orange-300 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-yellow-600">
+        <span className="absolute flex items-center justify-center w-6 h-6 bg-[var(--sec)] rounded-full -start-3 ring-8 ring-[var(--background)]">
             <CalendarIcon />
         </span>
-        <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+        <h3 className="flex items-center mb-1 text-lg font-semibold text-[var(--white)]">
             {position}
             {isCurrent && (
-                <span className="bg-blue-100 text-yellow-950 text-sm font-medium me-2 px-2.5 py-0.5 rounded-xl dark:bg-yellow-500 dark:text-yellow-950 ms-3">
+                <span className="bg-[var(--sec)] text-[var(--background)] text-sm font-medium me-2 px-2.5 py-0.5 rounded-xl ms-3">
                     Current
                 </span>
             )}
         </h3>
-        <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+        <time className="block mb-2 text-sm font-normal leading-none text-[var(--white-icon)]">
             {date}
         </time>
-        <h4 className=" font-bold text-gray-500 dark:text-gray-400">{company}</h4>
+        <h4 className="font-bold text-[var(--white)]">{company}</h4>
         <ul className="space-y-2">
             {task.map((task, index) => (
                 <li
                     key={index}
-                    className="flex items-center gap-2 text-base font-normal text-gray-500 dark:text-gray-400"
+                    className="flex items-center gap-2 text-base font-normal text-[var(--white-icon)]"
                 >
                     <svg
-                        className="w-4 h-4 flex-shrink-0 text-yellow-600"
+                        className="w-4 h-4 flex-shrink-0 text-[var(--sec)]"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                     >
@@ -62,8 +62,32 @@ const TimelineItem = ({
 const WorkTimeline = () => {
     const experiences = [
         {
-            company: "PT.Adamata Indonesia",
-            date: "Jan 2025 - Present",
+            company: "PT. Akasha Wira International Tbk.",
+            date: "Dec 2025 - Present",
+            position: "AI/ML Engineer ",
+            task: [
+                "Built automation workflows that reduced manual work for sales and HR, improving lead discovery to 3,250 Priority and 1,245 Qualified leads.",
+                "Created web scrapers to collect more target data from competitor platforms.",
+                "Set up LLM-based keyword generation, scheduling, and email reporting for Zoho CRM.",
+                "Built a desktop app that records calls, transcribes them, and gives real-time AI suggestions and summaries.",
+                "Developed a Chrome extension to download candidate data from job portals like KitaLulus.",
+                "Designed the system for real-time comments and speech generation for virtual avatar streaming.",
+            ],
+            isCurrent: true,
+        },
+        {
+            company: "WWWaste Pte Ltd",
+            date: "Jun 2025 - Dec 2025",
+            position: "AI/ML Engineer ",
+            task: [
+                "Built and deployed end-to-end ML and LLM pipelines for forecasting, insight generation, brand detection, and customer support chatbot development using AWS SageMaker and LangChain, enhancing business intelligence and user experience.",
+                "Optimized production APIs with FastAPI and Redis, integrating LLM observability (Langfuse) and reducing response time by 99.7% and token usage by 90%.",
+            ],
+            isCurrent: false,
+        },
+        {
+            company: "PT. Adamata Indonesia",
+            date: "Jan 2025 - Jun 2025",
             position: "Machine Learning Engineer Intern",
             task: [
                 "Contributing to data and CI/CD pipelines setup for machine learning model development",
@@ -71,7 +95,7 @@ const WorkTimeline = () => {
                 "Explore cutting-edge computer vision technology and algorithms for waste management ",
                 "Lead the software system design and refactor of bottle cap sorting. Increase 40% sorting performence ",
             ],
-            isCurrent: true,
+            isCurrent: false,
         },
         {
             company: "Ruang Guru",
@@ -97,7 +121,7 @@ const WorkTimeline = () => {
     ];
 
     return (
-        <ol className="relative border-s border-gray-200 dark:border-gray-700">
+        <ol className="relative border-s border-[var(--white-icon-tr)]">
             {experiences.map((exp, index) => (
                 <TimelineItem
                     key={index}

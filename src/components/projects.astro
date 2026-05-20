@@ -3,8 +3,53 @@ import ProjectList, { Project } from "../React/ProjectList.tsx";
 import Waste from "../../public/projects/Waste.png";
 import Trash from "../../public/projects/Trash.png";
 import umeals from "../../public/projects/NutriMom.png";
-
+import SafeFlood from "../../public/projects/SafeFlood.png";
+import TemanWisata from "../../public/projects/TemanWisata.png";
 const projects: Project[] = [
+  {
+  title: "Teman Wisata",
+  year: "2025",
+  image: TemanWisata as ImageMetadata,
+  preview: "https://www.loom.com/share/cdd6c48daee044bd881ce7eb637770b5?t=52&sid=8773bf8d-214b-4633-b9cc-d3cb542e8a23",
+  link: "https://github.com/TemanWisata",
+  status: "Completed",
+  description:
+    "An intelligent, personalized travel recommendation platform engineered to optimize trip planning for tourists exploring major cities in Indonesia by eliminating decision fatigue.",
+  stack: [
+    "FastAPI",
+    "TypeScript",
+    "RecTools",
+    "Kubernetes (K3s)",
+    "Supabase",
+    "Redis",
+    "MLflow",
+    "MinIO",
+    "Prometheus",
+    "Grafana",
+    "Cloudflare"
+  ],
+  achievements: [
+    "Implemented SASRec and BERT4Rec for next-item travel recommendations",
+    "Deployed a cost-efficient MLOps stack on a single 4 vCPU, 4 GB VM with K3s",
+    "Set up monitoring with Prometheus, Grafana, Loki, MinIO, and cert-manager"
+  ]
+},
+  {
+    title: "SafeFlood",
+    year: "2025",
+    image: SafeFlood as ImageMetadata,
+    preview: "https://www.youtube.com/watch?v=nryf8y9dsJg", 
+    link: "https://github.com/SafeFlood",
+    status: "Completed", 
+    description:
+      "A web-based early warning system designed to predict floods in South Sulawesi using satellite data, aimed at minimizing infrastructure damage and social-economic loss.",
+    stack: ["Python", "Google Earth Engine", "Docker", "Scikit-learn", "GitHub"], 
+    achievements: [
+      "Achieved 98% accuracy using the Random Forest model for flood prediction",
+      "Developed a 'no-device' prediction solution utilizing satellite data instead of local hardware",
+      "Integrated a comprehensive dashboard for weather forecasting and flood risk visualization",
+    ],
+  },
   {
     title: "Trash Object Detection",
     year: "2024",

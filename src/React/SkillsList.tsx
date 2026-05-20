@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CategoryIcons = {
+const CategoryIcons: Record<string, React.ReactElement> = {
   "AI Development": (
     <svg
       viewBox="0 0 48 48"
@@ -72,16 +72,18 @@ const CategoryIcons = {
 const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
-  const skills = {
+  const skills: Record<string, string[]> = {
     "AI Development": [
       "Image Processing and Computer Vision",
       "Natural Language Processing",
+      "Agent-Based Systems",
       "MLOps",
     ],
     "Data Science and Analytic": [
       "Data analysis with Pandas & NumPy",
       "Data visualization with Matplotlib & Seaborn",
       "Statistical analysis",
+      "Machine learning and Deep Learning",
     ],
     "Web and API Development": [
       "Full stack web development with Django & Laravel",
