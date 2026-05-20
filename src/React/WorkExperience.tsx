@@ -64,7 +64,7 @@ const WorkTimeline = () => {
         {
             company: "PT. Akasha Wira International Tbk.",
             date: "Dec 2025 - Present",
-            position: "AI/ML Engineer ",
+            position: "AI Specialist",
             task: [
                 "Built automation workflows that reduced manual work for sales and HR, improving lead discovery to 3,250 Priority and 1,245 Qualified leads.",
                 "Created web scrapers to collect more target data from competitor platforms.",
