@@ -70,7 +70,7 @@ const WorkTimeline = () => {
                 "Created web scrapers to collect more target data from competitor platforms.",
                 "Set up LLM-based keyword generation, scheduling, and email reporting for Zoho CRM.",
                 "Built a desktop app that records calls, transcribes them, and gives real-time AI suggestions and summaries.",
-                "Developed a Chrome extension to download candidate data from job portals like KitaLulus.",
+                "Developed a Chrome extension to download candidate data from job portals",
                 "Designed the system for real-time comments and speech generation for virtual avatar streaming.",
             ],
             isCurrent: true,
