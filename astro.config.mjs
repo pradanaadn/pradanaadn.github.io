@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
 
 import react from "@astrojs/react";
 
@@ -8,11 +9,16 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://pradanaadn.github.io",
   base: "/",
-  integrations: [tailwind(), react()],
+  integrations: [tailwind(), react(), sitemap()],
   redirects: {
     "/portofolio": "/",
     "/about": "/",
     "/aboutme": "/",
+    "/docs": "/docs",
+    "/documentation": "/docs",
+    "/learn": "/docs",
+    "/notes": "/docs",
+    "/tutorial": "/docs",
   },
   vite: {
     optimizeDeps: {

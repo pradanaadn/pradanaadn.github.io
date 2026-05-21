@@ -1,5 +1,5 @@
 ---
-import {getPath} from "../utils.tsx";
+import { getPath } from "../utils.tsx";
 interface Props {
   title: string;
   description?: string;
@@ -56,11 +56,17 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="google-site-verification" content="I9xlSg2YNj-bBORDdhCIUGs3sgKcbeyNiNy7GCK0J9I" />
+    <meta
+      name="google-site-verification"
+      content="I9xlSg2YNj-bBORDdhCIUGs3sgKcbeyNiNy7GCK0J9I"
+    />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords.join(", ")} />
     <meta name="author" content="Pradana Adnyana" />
-    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
     <meta name="theme-color" content="#101010" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href={canonical} />
@@ -76,56 +82,62 @@ const {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Pradana Adnyana",
-      jobTitle: "Machine Learning Engineer",
-      url: canonical,
-      image,
-      sameAs: [
-        "https://github.com/pradanaadn",
-        "https://linkedin.com/in/pradanaadn",
-      ],
-      alumniOf: "Udayana University",
-      knowsAbout: [
-        "Machine Learning",
-        "AI Product Development",
-        "Computer Vision",
-        "Natural Language Processing",
-        "MLOps",
-        "Deep Learning",
-        "Model Deployment",
-        "AI Automation",
-        "Predictive Analytics",
-        "Generative AI",
-        "LLM Applications",
-        "Python",
-        "TensorFlow",
-        "PyTorch",
-        "Data Science",
-        "Computer Vision Engineer",
-        "NLP Engineer",
-        "Machine Learning Portfolio",
-        "Prompt Engineering",
-        "API Development",
-        "Cloud Deployment",
-        
-      ],
-      description,
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Pradana Adnyana Portfolio",
-      url: canonical,
-      description,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${canonical}?q={search_term_string}`,
-        "query-input": "required name=search_term_string",
-      },
-    })} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Pradana Adnyana",
+        jobTitle:
+          "Machine Learning Engineer | AI Engineer | MLOps Engineer | Computer Vision Engineer | NLP Engineer| AI Product Developer| Software Engineer| Backend Developer | Backend Engineer | Solution Architect | Generative AI Specialist | LLM Applications Developer | AI Automation Engineer | Predictive Analytics Specialist | API Developer | Cloud Deployment Engineer",
+        url: canonical,
+        image,
+        sameAs: [
+          "https://github.com/pradanaadn",
+          "https://linkedin.com/in/pradanaadn",
+        ],
+        alumniOf: "Udayana University",
+        knowsAbout: [
+          "Machine Learning",
+          "AI Product Development",
+          "Computer Vision",
+          "Natural Language Processing",
+          "MLOps",
+          "Deep Learning",
+          "Model Deployment",
+          "AI Automation",
+          "Predictive Analytics",
+          "Generative AI",
+          "LLM Applications",
+          "Python",
+          "TensorFlow",
+          "PyTorch",
+          "Data Science",
+          "Computer Vision Engineer",
+          "NLP Engineer",
+          "Machine Learning Portfolio",
+          "Prompt Engineering",
+          "API Development",
+          "Cloud Deployment",
+        ],
+        description,
+      })}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Pradana Adnyana Portfolio",
+        url: canonical,
+        description,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${canonical}?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      })}
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
